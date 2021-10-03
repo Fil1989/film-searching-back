@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 const { UserDuplicateError } = require('../errorHelpers/errors')
 
-const userSchema = new mongoose.Schema({
+const filmsUserSchema = new mongoose.Schema({
   password: {
     type: String,
     required: [true, 'Set password for user'],
@@ -16,22 +16,12 @@ const userSchema = new mongoose.Schema({
       },
     ],
   },
-  subscription: {
+  name: {
     type: String,
-    enum: ['starter', 'pro', 'business'],
-    default: 'starter',
-  },
-  avatarURL: String,
-  verify: {
-    type: Boolean,
-    default: false,
-  },
-  verificationtoken: {
-    type: String,
-    required: [true, 'Verify token is required'],
+    required: [true, 'Email is required'],
   },
   token: String,
 })
-const User = mongoose.model('User', userSchema)
+const FilmsUser = mongoose.model('filmsuser', filmsUserSchema)
 
-module.exports = { User }
+module.exports = { FilmsUser }
