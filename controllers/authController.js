@@ -16,7 +16,7 @@ const loginController = async (req, res) => {
   if (!user) {
     res.status(404).json({ message: 'user login error' })
   } else {
-    res.status(200).json({ message: 'user login success', token: user.token })
+    res.status(200).json({ message: 'user login success', token: user.token, name:user.name })
   }
 }
 const logoutController = async (req, res) => {
