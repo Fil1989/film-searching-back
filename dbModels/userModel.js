@@ -18,7 +18,7 @@ const filmsUserSchema = new mongoose.Schema({
   },
   name: {
     type: String,
-    required: [true, 'Email is required'],
+    required: [true, 'Name is required'],
   },
   token: String,
 })
